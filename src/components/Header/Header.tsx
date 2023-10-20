@@ -64,7 +64,7 @@ function Header(props: HeaderProps) {
               textDecoration: 'none',
             }}
           >
-            JCM Data
+            JCM Projects
           </Typography>
           <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
           <Typography
@@ -83,7 +83,7 @@ function Header(props: HeaderProps) {
               textDecoration: 'none',
             }}
           >
-            JCM Data
+            JCM Projects
           </Typography>
           <ThemeToggleButton ColorModeContext={props.ColorModeContext} />
           {tabletCheck ? (

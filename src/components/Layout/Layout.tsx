@@ -11,12 +11,15 @@ const Layout = (props: any) => {
   return (
     <>
       <Head>
-        <title>JCM Data</title>
+        <title>JCM Projects</title>
         <meta name="description" content="Data Dashboard" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={scss.layout}>
+      <main
+        className={scss.layout}
+        style={{ padding: session ? "0 24px 0 80px" : 0}}
+      >
         {session ? <SideMenu /> : null}
         {props.children}
       </main>
