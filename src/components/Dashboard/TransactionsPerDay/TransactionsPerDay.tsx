@@ -1,8 +1,7 @@
 import React from "react";
 import scss from "./TransactionsPerDay.module.scss";
-import { Card, Grid, Paper } from "@mui/material";
+import { Card, Grid, Paper, useTheme } from "@mui/material";
 import Typography from "@mui/material/Typography";
-import { useTheme } from "@mui/system";
 import DataChart from "../DataChart";
 import { lineChartData } from "../mockData";
 
