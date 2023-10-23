@@ -11,7 +11,7 @@ import Avatar from '@mui/material/Avatar';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import SurfingIcon from '@mui/icons-material/Surfing';
-import ThemeToggleButton from '../ThemeToggleButton';
+// import ThemeToggleButton from '../ThemeToggleButton';
 import { useMediaQuery, useTheme } from '@mui/material';
 import Link from 'next/link';
 
@@ -37,7 +37,7 @@ function Header(props: HeaderProps) {
   const tabletCheck = useMediaQuery('(min-width: 768px)');
 
   return (
-    <AppBar position="static" sx={{ marginBottom: "40px"}}>
+    <AppBar position="fixed" sx={{ marginBottom: "40px"}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <SurfingIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
@@ -77,7 +77,7 @@ function Header(props: HeaderProps) {
           >
             JCM Projects
           </Typography>
-          <ThemeToggleButton ColorModeContext={props.ColorModeContext} />
+          {/* <ThemeToggleButton ColorModeContext={props.ColorModeContext} /> */}
           {tabletCheck ? (
                         <Box sx={{ paddingRight: 3, marginLeft: 'auto' }}>
                         <Typography>Signed in as {session?.user?.email}</Typography>

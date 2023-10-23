@@ -5,8 +5,8 @@ import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import ExitToAppIcon from "@mui/icons-material/ExitToApp";
 import Person2Icon from "@mui/icons-material/Person2";
-import HomeIcon from "@mui/icons-material/Home";
 import EqualizerIcon from "@mui/icons-material/Equalizer";
+import TrackChangesIcon from '@mui/icons-material/TrackChanges';
 import { Settings } from "@mui/icons-material";
 import NextLink from "next/link";
 import scss from "./SideMenu.module.scss";
@@ -51,7 +51,7 @@ const closedMixin = (theme: Theme): CSSObject => ({
 const menuRouteList = ["/", "data", "profile", "settings", ""];
 const menuListTranslations = ["Home", "Data", "Profile", "Settings", "Sign Out"];
 const menuListIcons = [
-  <HomeIcon key="home" />,
+  <TrackChangesIcon key="home" />,
   <EqualizerIcon key="data" />,
   <Person2Icon key="profile" />,
   <Settings key="settings" />,

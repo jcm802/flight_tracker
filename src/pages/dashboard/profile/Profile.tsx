@@ -41,11 +41,11 @@ const Profile = () => {
   };
   return (
     <>
-      <h1>Profile</h1>
+      <Typography variant="h5" marginBottom="10px">Profile Page</Typography>
       <Box>
-        <Typography variant={"h4"} sx={{ paddingBottom: 4 }}>
-          Hey {session ? session?.user?.name : "User"}, welcome to your profile
-          👋
+        <Typography variant={"h4"}>
+          {/* Hey {session ? session?.user?.name : "User"}, welcome to your profile
+          👋 */}
         </Typography>
         <Paper sx={{ padding: "1rem 2rem" }}>
           <Grid container justifyContent="center">
@@ -53,9 +53,10 @@ const Profile = () => {
               <Box display="flex" flexDirection="column" alignItems="center">
                 <Avatar
                   sx={{
-                    height: 100,
-                    width: 100,
-                    marginBottom: 2,
+                    height: 80,
+                    width: 80,
+                    marginTop: 2,
+                    marginBottom: 5,
                   }}
                   src={session?.user?.image as string}
                 />
@@ -131,7 +132,7 @@ const Profile = () => {
                       label="Receive sales analytics emails"
                     />
                   </Grid>
-                  <Grid item xs={12}>
+                  <Grid item xs={12} marginBottom={5}>
                     <Button type="submit" variant="contained" color="primary">
                       Save Changes
                     </Button>

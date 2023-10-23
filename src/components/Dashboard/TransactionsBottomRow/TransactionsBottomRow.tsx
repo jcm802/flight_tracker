@@ -2,7 +2,12 @@ import Grid from "@mui/material/Grid";
 import React from "react";
 import DataChart from "../DataChart";
 import Paper from "@mui/material/Paper";
-import { doughnutChartData } from "../mockData";
+import {
+  doughnutChartIndustryData,
+  doughnutChartUserData,
+  doughnutChartCompanyData,
+  doughnutChartStakeholderData
+} from "../mockData";
 import scss from "./TransactionsBottomRow.module.scss";
 
 const TransactionBottomRow = () => {
@@ -10,26 +15,26 @@ const TransactionBottomRow = () => {
     <Grid container className={scss.bottomRow}>
       <Grid>
         <Paper className={scss.dataCard}>
-          <p>Transactions per user type</p>
-          <DataChart type={"doughnut"} data={doughnutChartData} />
+          <p>Transactions per industry</p>
+          <DataChart type={"doughnut"} data={doughnutChartIndustryData} />
         </Paper>
       </Grid>
       <Grid>
         <Paper className={scss.dataCard}>
-          <p>Transactions per user type</p>
-          <DataChart type={"doughnut"} data={doughnutChartData} />
+          <p>Transactions per user</p>
+          <DataChart type={"doughnut"} data={doughnutChartUserData} />
         </Paper>
       </Grid>
       <Grid>
         <Paper className={scss.dataCard}>
-          <p>Transactions per user type</p>
-          <DataChart type={"doughnut"} data={doughnutChartData} />
+          <p>Transactions per company</p>
+          <DataChart type={"doughnut"} data={doughnutChartCompanyData} />
         </Paper>
       </Grid>
       <Grid>
         <Paper className={scss.dataCard}>
-          <p>Transactions per user type</p>
-          <DataChart type={"doughnut"} data={doughnutChartData} />
+          <p>Transactions per stakeholder</p>
+          <DataChart type={"doughnut"} data={doughnutChartStakeholderData} />
         </Paper>
       </Grid>
     </Grid>

@@ -38,10 +38,10 @@ const Settings = () => {
   };
   return (
     <>
-      <h1>Settings</h1>
+      <Typography variant="h5" marginBottom="10px">Settings</Typography>
       <Box>
-        <Typography variant="h4" gutterBottom>
-          Dashboard Features
+        <Typography variant="subtitle1" gutterBottom fontWeight={'bold'}>
+          Data Dashboard Features
         </Typography>
         <form onSubmit={handleSubmit}>
           <Grid container spacing={2}>
@@ -55,7 +55,7 @@ const Settings = () => {
                         onChange={handleShowRevenueChange}
                       />
                     }
-                    label="Revenue"
+                    label="Transactions Top"
                   />
                   <FormControlLabel
                     control={
@@ -64,7 +64,7 @@ const Settings = () => {
                         onChange={handleShowProfitChange}
                       />
                     }
-                    label="Profit"
+                    label="Graph"
                   />
                   <FormControlLabel
                     control={
@@ -73,7 +73,7 @@ const Settings = () => {
                         onChange={handleShowOrdersChange}
                       />
                     }
-                    label="Orders"
+                    label="Doughnuts"
                   />
                   <FormControlLabel
                     control={

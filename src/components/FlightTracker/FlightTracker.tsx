@@ -26,7 +26,7 @@ interface IFilters {
 
 export default function Data() {
   const [page, setPage] = useState<number | null>(0);
-  const [rowsPerPage, setRowsPerPage] = useState<number>(10);
+  const [rowsPerPage, setRowsPerPage] = useState<number>(100);
   const [flights, setFlights] = useState<Array<Flight>>([]);
   const [totalFlights, setTotalFlights] = useState<number>(0);
   const [searchTerm, setSearchTerm] = useState<string>('');
@@ -213,7 +213,6 @@ export default function Data() {
 
   useEffect(() => {
     setIsLoading(false);
-    setRowsPerPage(100);
   }, []);
 
   useEffect(() => {
