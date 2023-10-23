@@ -10,7 +10,7 @@ import Container from '@mui/material/Container';
 import Avatar from '@mui/material/Avatar';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
+import SurfingIcon from '@mui/icons-material/Surfing';
 import ThemeToggleButton from '../ThemeToggleButton';
 import { useMediaQuery, useTheme } from '@mui/material';
 import Link from 'next/link';
@@ -40,7 +40,7 @@ function Header(props: HeaderProps) {
     <AppBar position="static" sx={{ marginBottom: "40px"}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+          <SurfingIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
           <Typography
             variant="h6"
             noWrap
@@ -58,7 +58,7 @@ function Header(props: HeaderProps) {
           >
             JCM Projects
           </Typography>
-          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+          <SurfingIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
           <Typography
             variant="h5"
             noWrap

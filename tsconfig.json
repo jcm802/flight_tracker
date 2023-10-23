@@ -17,6 +17,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/pages/_app.jsx", "src/components/Login/Login.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/pages/_app.jsx", "src/components/Login/Login.js", "src/components/Pagination/Pagination.jsx"],
   "exclude": ["node_modules"]
 }

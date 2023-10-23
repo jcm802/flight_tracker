@@ -18,13 +18,17 @@
     "@mui/x-data-grid": "^6.16.2",
     "@mui/x-data-grid-generator": "^6.16.2",
     "@types/chart.js": "^2.9.39",
+    "axios": "^1.5.1",
     "chart.js": "^4.4.0",
+    "json-server": "^0.17.4",
     "next": "13.5.4",
     "next-auth": "^4.24.3",
     "prettier": "^3.0.3",
     "react": "^18",
     "react-dom": "^18",
-    "sass": "^1.69.4"
+    "react-icons": "^4.11.0",
+    "sass": "^1.69.4",
+    "styled-components": "^6.1.0"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^7.5.1",
