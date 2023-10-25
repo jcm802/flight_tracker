@@ -211,9 +211,6 @@ export default function Data() {
   };
 
   useEffect(() => {
-  }, []);
-
-  useEffect(() => {
       if ((selectedFilter?.name !== undefined && selectedFilter?.name >= 0) || selectedFilter === undefined) {
         handleFilter();
       }
