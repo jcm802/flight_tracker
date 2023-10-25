@@ -31,7 +31,6 @@ export default function Data() {
   const [totalFlights, setTotalFlights] = useState<number>(0);
   const [searchTerm, setSearchTerm] = useState<string>('');
   const [selectedFilter, setSelectedFilter] = useState<IFilters | undefined>({} as IFilters);
-  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const mobileSettings = useMediaQuery('(min-width: 600px)');
   const debouncedSearchTerm = useDebounce(searchTerm, 400);
@@ -212,11 +211,9 @@ export default function Data() {
   };
 
   useEffect(() => {
-    setIsLoading(false);
   }, []);
 
   useEffect(() => {
-    if (!isLoading) {
       if ((selectedFilter?.name !== undefined && selectedFilter?.name >= 0) || selectedFilter === undefined) {
         handleFilter();
       }
@@ -225,21 +222,14 @@ export default function Data() {
           getAllFlights();
         }
       }
-    }
   }, [selectedFilter]);
 
   useEffect(() => {
-    if (page !== null) {
-      if (!isLoading) {
-        handleFilter();
-      }
-    }
+      handleFilter();
   }, [page]);
 
   useEffect(() => {
-    if (!isLoading) {
       handleFilter();
-    }
   }, [debouncedSearchTerm]);
 
   useEffect(() => {
