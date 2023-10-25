@@ -36,72 +36,6 @@ export default function Data() {
   const debouncedSearchTerm = useDebounce(searchTerm, 400);
   const searchbar = useRef<HTMLInputElement>(null);
 
-  const getAllFlights = async () => {
-    await axios.get(`http://127.0.0.1:8080/flights?page=${page as number + 1}&limit=${rowsPerPage}&search=${searchTerm}`)
-      .then((res) => {
-        setFlights(res?.data?.flights);
-        setTotalFlights(res?.data?.total);
-      })
-      .catch((err) => {
-        console.log(err);
-      })
-  }
-
-  const getArrived = async () => {
-    await axios.get(`http://127.0.0.1:8080/flights/arrived?page=${page as number + 1}&limit=${rowsPerPage}&search=${searchTerm}`)
-      .then((res) => {
-        setFlights(res?.data?.flights);
-        setTotalFlights(res?.data?.total);
-      })
-      .catch((err) => {
-        console.log(err);
-      })
-  }
-
-  const getArrivingSoon = async () => {
-    await axios.get(`http://127.0.0.1:8080/flights/arriving_soon?page=${page as number + 1}&limit=${rowsPerPage}&search=${searchTerm}`)
-      .then((res) => {
-        setFlights(res?.data?.flights);
-        setTotalFlights(res?.data?.total);
-      })
-      .catch((err) => {
-        console.log(err);
-      })
-  }
-
-  const getDeparted = async () => {
-    await axios.get(`http://127.0.0.1:8080/flights/departed?page=${page as number + 1}&limit=${rowsPerPage}&search=${searchTerm}`)
-      .then((res) => {
-        setFlights(res?.data?.flights);
-        setTotalFlights(res?.data?.total);
-      })
-      .catch((err) => {
-        console.log(err);
-      })
-  }
-
-  const getNotDeparted = async () => {
-    await axios.get(`http://127.0.0.1:8080/flights/not_departed?page=${page as number + 1}&limit=${rowsPerPage}&search=${searchTerm}`)
-      .then((res) => {
-        setFlights(res?.data?.flights);
-        setTotalFlights(res?.data?.total);
-      })
-      .catch((err) => {
-        console.log(err);
-      })
-  }
-
-  const getDelayed = async () => {
-    await axios.get(`http://127.0.0.1:8080/flights/delayed?page=${page as number + 1}&limit=${rowsPerPage}&search=${searchTerm}`)
-      .then((res) => {
-        setFlights(res?.data?.flights);
-        setTotalFlights(res?.data?.total);
-      })
-      .catch((err) => {
-        console.log(err);
-      })
-  }
-
   const handleSearchBarChange: ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement> = (e: any) => {
     setPage(0);
     setSearchTerm(e.target.value);
@@ -188,52 +122,101 @@ export default function Data() {
     },
   ];
 
-  const handleFilter = async () => {
-    switch (selectedFilter?.name) {
-      case 0:
-        await getArrived();
-        break;
-      case 1:
-        await getArrivingSoon();
-        break;
-      case 2:
-        await getDeparted();
-        break;
-      case 3:
-        await getNotDeparted();
-        break;
-      case 4:
-        await getDelayed();
-        break;
-      default:
-        await getAllFlights();
+  useEffect(() => {
+    const getAllFlights = async () => {
+      await axios.get(`http://127.0.0.1:8080/flights?page=${page as number + 1}&limit=${rowsPerPage}&search=${searchTerm}`)
+        .then((res) => {
+          setFlights(res?.data?.flights);
+          setTotalFlights(res?.data?.total);
+        })
+        .catch((err) => {
+          console.log(err);
+        })
     }
-  };
-
-  useEffect(() => {
-      if ((selectedFilter?.name !== undefined && selectedFilter?.name >= 0) || selectedFilter === undefined) {
-        handleFilter();
-      }
-      if (selectedFilter && Object.keys(selectedFilter).length === 0) {
-        if (page !== null && page >= 0) {
-          getAllFlights();
-        }
-      }
-  }, [selectedFilter]);
-
-  useEffect(() => {
-      handleFilter();
-  }, [page]);
-
-  useEffect(() => {
-      handleFilter();
-  }, [debouncedSearchTerm]);
-
-  useEffect(() => {
-    if (rowsPerPage) {
-      handleFilter();
+  
+    const getArrived = async () => {
+      await axios.get(`http://127.0.0.1:8080/flights/arrived?page=${page as number + 1}&limit=${rowsPerPage}&search=${searchTerm}`)
+        .then((res) => {
+          setFlights(res?.data?.flights);
+          setTotalFlights(res?.data?.total);
+        })
+        .catch((err) => {
+          console.log(err);
+        })
     }
-  }, [rowsPerPage]);
+  
+    const getArrivingSoon = async () => {
+      await axios.get(`http://127.0.0.1:8080/flights/arriving_soon?page=${page as number + 1}&limit=${rowsPerPage}&search=${searchTerm}`)
+        .then((res) => {
+          setFlights(res?.data?.flights);
+          setTotalFlights(res?.data?.total);
+        })
+        .catch((err) => {
+          console.log(err);
+        })
+    }
+  
+    const getDeparted = async () => {
+      await axios.get(`http://127.0.0.1:8080/flights/departed?page=${page as number + 1}&limit=${rowsPerPage}&search=${searchTerm}`)
+        .then((res) => {
+          setFlights(res?.data?.flights);
+          setTotalFlights(res?.data?.total);
+        })
+        .catch((err) => {
+          console.log(err);
+        })
+    }
+  
+    const getNotDeparted = async () => {
+      await axios.get(`http://127.0.0.1:8080/flights/not_departed?page=${page as number + 1}&limit=${rowsPerPage}&search=${searchTerm}`)
+        .then((res) => {
+          setFlights(res?.data?.flights);
+          setTotalFlights(res?.data?.total);
+        })
+        .catch((err) => {
+          console.log(err);
+        })
+    }
+  
+    const getDelayed = async () => {
+      await axios.get(`http://127.0.0.1:8080/flights/delayed?page=${page as number + 1}&limit=${rowsPerPage}&search=${searchTerm}`)
+        .then((res) => {
+          setFlights(res?.data?.flights);
+          setTotalFlights(res?.data?.total);
+        })
+        .catch((err) => {
+          console.log(err);
+        })
+    }
+    const handleFilter = async () => {
+      switch (selectedFilter?.name) {
+        case 0:
+          await getArrived();
+          break;
+        case 1:
+          await getArrivingSoon();
+          break;
+        case 2:
+          await getDeparted();
+          break;
+        case 3:
+          await getNotDeparted();
+          break;
+        case 4:
+          await getDelayed();
+          break;
+        default:
+          await getAllFlights();
+      }
+    };
+      handleFilter();
+  }, [
+    debouncedSearchTerm,
+    rowsPerPage,
+    page,
+    selectedFilter,
+    searchTerm
+  ]);
 
   return (
     <>
@@ -269,7 +252,6 @@ export default function Data() {
         ))}
         </FiltersContainer>
         <FlightTrackerDivider $marginBottom $marginTop />
-        <div>
           <DataGrid
             flights={flights}
             amountOfFlights={rowsPerPage}
@@ -283,7 +265,6 @@ export default function Data() {
             rowsPerPage={rowsPerPage}
             onRowsPerPageChange={handleChangeRowsPerPage}
           />
-        </div>
       </>
   );
 };
