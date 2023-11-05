@@ -7,7 +7,7 @@ import Grid from "@mui/material/Grid";
 
 export default function Data() {
   return (
-    <Box marginBottom={15}>
+    <Box marginTop={10} marginBottom={15}>
       <Typography variant="h5" marginBottom="10px">Data Dashboard</Typography>
       <Grid container gap={4} marginTop={2} marginBottom={2}>
         <DataRibbon />
