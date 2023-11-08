@@ -5,7 +5,6 @@ interface IFlightTrackerFilterProps {
   id: number;
   description: string;
   active: boolean;
-  noFiltersActive: boolean;
   borderColor: string | undefined;
   color: string | undefined;
   mobileSettings: boolean;
@@ -16,7 +15,6 @@ export default function Filter({
   id,
   description,
   active = false,
-  noFiltersActive,
   borderColor,
   color,
   mobileSettings,
@@ -34,7 +32,6 @@ export default function Filter({
       color={color}
       borderColor={borderColor}
       active={active}
-      noFiltersActive={noFiltersActive}
       onClick={() => handleClick()}
     >
       <FilterDescription mobileSettings={mobileSettings}>{description}</FilterDescription>

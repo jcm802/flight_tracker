@@ -69,11 +69,3 @@ const handleColor = (color: string) => {
 export const FlightTrackerDataGridCellText = styled.span<{ color?: string }>`
   color: ${(props) => props.color ? handleColor(props.color) : ''};
 `;
-
-export const ColumnFilterButton = styled(MdFilterList)`
-  margin-left: 5px;
-  &:hover {
-     color: #50C878;
-     cursor: pointer;
-   }
-`;

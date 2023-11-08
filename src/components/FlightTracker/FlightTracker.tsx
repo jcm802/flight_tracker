@@ -243,7 +243,6 @@ export default function Data() {
             id={filter.id}
             description={filter.description}
             active={selectedFilter?.id === filter.id}
-            noFiltersActive={!selectedFilter?.id}
             borderColor={filter.borderColor}
             color={filter.color}
             mobileSettings={mobileSettings}

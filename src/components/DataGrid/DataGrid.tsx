@@ -10,7 +10,6 @@ import {
   FlightTrackerDataGridTableBody,
   FlightTrackerDataGridTableRow,
   FlightTrackerDataGridCell,
-  FlightTrackerDataGridCellContent,
   FlightTrackerDataGridCellText,
 } from './DataGrid.style';
 import { Flight } from '@/types/flights';
@@ -119,7 +118,7 @@ export default function DataGrid({
         </FlightTrackerDataGridTableBody>
       </FlightTrackerDataGridTable>
 
-      {flights && amountOfFlights === 0 ? (
+      {amountOfFlights === 0 ? (
         <NoMatchText>
           Your current filter selection produced no matches.
         </NoMatchText>
